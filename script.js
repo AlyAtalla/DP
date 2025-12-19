@@ -27,4 +27,43 @@ document.addEventListener('DOMContentLoaded',function(){
       form.reset();
     });
   }
+
+  // Smooth reveal for sections using IntersectionObserver
+  const sections = document.querySelectorAll('main section, .hero');
+  if('IntersectionObserver' in window){
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+        }
+      });
+    },{threshold:0.15});
+    sections.forEach(s=>obs.observe(s));
+  } else {
+    // fallback: reveal all
+    sections.forEach(s=>s.classList.add('in-view'));
+  }
+
+  // Subtle parallax on bg-media
+  const bg = document.querySelector('.bg-media img');
+  if(bg){
+    let latestKnownScrollY = 0;
+    let ticking = false;
+    function onScroll(){
+      latestKnownScrollY = window.scrollY;
+      requestTick();
+    }
+    function requestTick(){
+      if(!ticking){
+        requestAnimationFrame(update);
+      }
+      ticking = true;
+    }
+    function update(){
+      ticking = false;
+      const translate = Math.round(latestKnownScrollY * 0.15);
+      bg.style.transform = `translate3d(0, ${translate}px, 0)`;
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+  }
 });
