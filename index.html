@@ -4,6 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>DP Forensic Psychology</title>
+  <!-- Open Graph / Twitter Card metadata for social thumbnails -->
+  <meta property="og:title" content="DP Forensic Psychology">
+  <meta property="og:description" content="Licensed and registered forensic psychologist in Cyprus. CBT-focused therapy, forensic assessments, expert witness testimony. In-person & online services.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dppsy.netlify.app/">
+  <meta property="og:image" content="https://dppsy.netlify.app/assets/social-thumb.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DP Forensic Psychology">
+  <meta name="twitter:description" content="Licensed and registered forensic psychologist in Cyprus. CBT-focused therapy, forensic assessments, expert witness testimony.">
+  <meta name="twitter:image" content="https://dppsy.netlify.app/assets/social-thumb.svg">
+  <link rel="image_src" href="https://dppsy.netlify.app/assets/social-thumb.svg">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="shortcut icon" href="assets/favicon.svg">
@@ -35,7 +46,7 @@
     <section class="hero">
       <div class="container">
         <h1>DP Forensic Psychology</h1>
-        <p>Licensed and registered forensic psychologist (Cyprus). In-person and online therapy, assessments, forensic reports, expert witness testimony and consultancy. CBT-focused approach with experience in clinical and forensic populations and substance addiction.</p>
+        <p>Dimitra Papadopoulou is a licensed and registered forensic psychologist (Cyprus). In-person and online therapy, assessments, forensic reports, expert witness testimony and consultancy. CBT-focused approach with experience in clinical and forensic populations and substance addiction.</p>
       </div>
     </section>
 
@@ -59,6 +70,7 @@
       <h2>Contact</h2>
       <p>Email: <a href="mailto:info@dpforensicpsych.cy">info@dpforensicpsych.cy</a></p>
       <p>Phone: +357 99 000000</p>
+      <p>WhatsApp: <a href="https://wa.me/35799000000?text=Hello%20I%20would%20like%20to%20inquire%20about%20your%20services" target="_blank" rel="noopener noreferrer">+357 99 000000</a></p>
 
       <form id="contactForm" class="contact-form" action="#" method="post">
         <label for="name">Name</label>
@@ -72,12 +84,28 @@
 
         <button type="submit">Send</button>
       </form>
+
+      <!-- Google Form embed toggle: replace DATA-SRC with your form's embed URL -->
+      <button id="open-form-btn" class="open-form-btn" aria-expanded="false">Open inquiry form</button>
+
+      <div id="google-form-wrapper" class="google-form-wrapper hidden" aria-hidden="true">
+        <p class="muted">The inquiry form will load here when opened. Replace the iframe's <code>data-src</code> with your Google Form embed URL.</p>
+        <div class="form-embed">
+          <!-- Example embed URL format:
+               https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true
+               Replace the data-src value below with your actual form embed link. -->
+          <iframe id="google-form-iframe" title="Inquiry form" data-src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" src="" loading="lazy" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
       <small>Licensed and registered forensic psychologist in Cyprus. CBT-focused practice. In-person &amp; online services.</small>
+      <div class="share" style="margin-top:10px">
+        <a class="share-btn whatsapp-btn" href="https://api.whatsapp.com/send?text=Check%20out%20DP%20Forensic%20Psychology%20-%20https://dppsy.netlify.app/" target="_blank" rel="noopener noreferrer">Share on WhatsApp</a>
+      </div>
     </div>
   </footer>
 

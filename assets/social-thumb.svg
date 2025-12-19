@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0%" stop-color="#0b5677"/>
+      <stop offset="50%" stop-color="#2b9bb0"/>
+      <stop offset="100%" stop-color="#7bd3f6"/>
+    </linearGradient>
+    <style>
+      .bg{fill:url(#g)}
+      .title{fill:#ffffff;font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;font-weight:700;font-size:56px}
+      .subtitle{fill:#e8f6fb;font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;font-size:28px}
+      .small{fill:rgba(255,255,255,0.85);font-size:20px}
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="630" rx="24"/>
+
+  <!-- simple brain motif on the left -->
+  <g transform="translate(80,120) scale(2.4)">
+    <path d="M44 8c-6-1-12 2-15 6-3-4-9-7-15-6-7 1-12 7-12 14 0 7 6 15 9 17 3 2 8 4 12 3 3 4 8 6 14 6s11-2 14-6c3 1 9-1 12-3 3-2 9-10 9-17 0-7-5-13-12-14-6-1-12 1-15 5-3-4-9-7-15-6z" fill="#ffffff" opacity="0.14"/>
+    <path d="M44 8c-6-1-12 2-15 6-3-4-9-7-15-6-7 1-12 7-12 14 0 7 6 15 9 17 3 2 8 4 12 3 3 4 8 6 14 6s11-2 14-6c3 1 9-1 12-3 3-2 9-10 9-17 0-7-5-13-12-14-6-1-12 1-15 5-3-4-9-7-15-6z" fill="#ffffff" opacity="0.26" transform="translate(6,4) scale(0.98)"/>
+  </g>
+
+  <!-- Title block on the right -->
+  <text x="420" y="240" class="title">DP Forensic Psychology</text>
+  <text x="420" y="300" class="subtitle">Licensed forensic psychologist — Cyprus</text>
+  <text x="420" y="350" class="small">CBT-focused therapy • Forensic reports • Expert testimony</text>
+
+  <!-- subtle brand at bottom right -->
+  <text x="420" y="520" class="small">dppsy.netlify.app</text>
+</svg>
