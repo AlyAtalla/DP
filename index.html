@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DP Forensic Psychology</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Preload local SVG background for reliable display -->
+  <link rel="preload" href="assets/brain-abstract.svg" as="image">
+</head>
+<body>
+  <!-- Responsive full-page background (semantic, hidden from AT) -->
+  <div class="bg-media" aria-hidden="true">
+    <!-- use local SVG to ensure the brain motif displays reliably -->
+    <img src="assets/brain-abstract.svg" alt="Stylised brain background" loading="eager">
+  </div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">DP Forensic Psychology</div>
+      <nav class="nav">
+        <button id="menuBtn" class="menu-btn" aria-expanded="false">Menu ▾</button>
+        <ul id="dropdown" class="dropdown" hidden>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>DP Forensic Psychology</h1>
+        <p>Licensed and registered forensic psychologist (Cyprus). In-person and online therapy, assessments, forensic reports, expert witness testimony and consultancy. CBT-focused approach with experience in clinical and forensic populations and substance addiction.</p>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h2>About</h2>
+      <p>I provide evidence-based psychological assessment and therapy, with a focus on Cognitive Behavioural Therapy (CBT). I work with individuals across clinical and forensic settings, and have experience supporting people with substance use issues. I also prepare forensic reports for legal cases and provide expert testimony and consultancy to lawyers and courts.</p>
+    </section>
+
+    <section id="services" class="container services">
+      <h2>Services</h2>
+      <ul>
+        <li>Individual CBT therapy (in-person &amp; online)</li>
+        <li>Psychological assessments and evaluations</li>
+        <li>Forensic report writing for legal proceedings</li>
+        <li>Expert witness testimony and consultancy</li>
+        <li>Assessment &amp; treatment planning for substance use</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:info@dpforensicpsych.cy">info@dpforensicpsych.cy</a></p>
+      <p>Phone: +357 99 000000</p>
+
+      <form id="contactForm" class="contact-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>Licensed and registered forensic psychologist in Cyprus. CBT-focused practice. In-person &amp; online services.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
