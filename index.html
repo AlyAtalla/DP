@@ -72,7 +72,11 @@
       <p>Phone: +357 99 000000</p>
       <p>WhatsApp: <a href="https://wa.me/35799000000?text=Hello%20I%20would%20like%20to%20inquire%20about%20your%20services" target="_blank" rel="noopener noreferrer">+357 99 000000</a></p>
 
-      <form id="contactForm" class="contact-form" action="#" method="post">
+      <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" method="POST" id="contactForm" class="contact-form">
+        <div style="display: none;">
+          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        </div>
+        <input type="hidden" name="form-name" value="contact" />
         <label for="name">Name</label>
         <input id="name" name="name" required>
 
@@ -84,19 +88,6 @@
 
         <button type="submit">Send</button>
       </form>
-
-      <!-- Google Form embed toggle: replace DATA-SRC with your form's embed URL -->
-      <button id="open-form-btn" class="open-form-btn" aria-expanded="false">Open inquiry form</button>
-
-      <div id="google-form-wrapper" class="google-form-wrapper hidden" aria-hidden="true">
-        <p class="muted">The inquiry form will load here when opened. Replace the iframe's <code>data-src</code> with your Google Form embed URL.</p>
-        <div class="form-embed">
-          <!-- Example embed URL format:
-               https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true
-               Replace the data-src value below with your actual form embed link. -->
-          <iframe id="google-form-iframe" title="Inquiry form" data-src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" src="" loading="lazy" frameborder="0" marginheight="0" marginwidth="0"></iframe>
-        </div>
-      </div>
     </section>
   </main>
 
@@ -108,6 +99,14 @@
       </div>
     </div>
   </footer>
+
+  <!-- Cookie Disclaimer Banner -->
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-container">
+      <p>This website uses cookies to enhance your experience. By continuing to use this site, you agree to our use of cookies.</p>
+      <button id="accept-cookies" class="accept-btn">Accept</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

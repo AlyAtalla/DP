@@ -76,13 +76,58 @@ main section, .hero{opacity:0;transform:translateY(18px);transition:opacity 560m
 .whatsapp-btn{background:#25D366;color:#fff}
 .whatsapp-btn:hover{opacity:0.95}
 
-/* Google Form embed styles */
-.open-form-btn{display:inline-block;margin-top:14px;padding:10px 14px;border-radius:8px;border:1px solid #e6eef2;background:#fff;color:var(--accent);cursor:pointer}
-.google-form-wrapper.hidden{display:none}
-.google-form-wrapper{margin-top:18px}
-.google-form-wrapper .muted{color:var(--muted);font-size:13px;margin-bottom:8px}
-.form-embed{background:#fff;border:1px solid #e9f0f2;border-radius:10px;padding:8px}
 .form-embed iframe{width:100%;height:560px;border:0;border-radius:6px}
+
+/* Cookie Banner */
+.cookie-banner{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(0,0,0,0.06);
+  padding: 20px;
+  z-index: 1000;
+  display: none; /* Hidden by default, shown by JS if not accepted */
+}
+.cookie-container{
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.cookie-container p{
+  margin: 0;
+  font-size: 14px;
+  color: #102127;
+}
+.accept-btn{
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+.accept-btn:hover{
+  opacity: 0.9;
+}
+
+@media (max-width:840px){
+  .cookie-container{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .cookie-container p{
+    font-size: 13px;
+  }
+}
 
 @media (max-width:840px){
   html{font-size:15px}
