@@ -117,3 +117,19 @@ document.addEventListener('DOMContentLoaded',function(){
     }
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const gif = document.getElementById('cookie-gif-img');
+  if (!gif) return;
+
+  // ⏱️ duration of ONE loop of the GIF (seconds)
+  // ⚠️ You must adjust this once (see note below)
+  const oneLoopDuration = 2.5;
+
+  // Play twice
+  const totalDuration = oneLoopDuration * 2 * 1000;
+
+  setTimeout(() => {
+    gif.src = './assets/cookies-static.jfif';
+  }, totalDuration);
+});

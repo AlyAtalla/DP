@@ -112,33 +112,62 @@
   </footer>
 
   <!-- Cookie Disclaimer Banner -->
-  <div id="cookie-banner" class="cookie-banner">
-    <div class="cookie-container">
-      <p>We use cookies to improve your browsing experience, provide personalized content, and analyze site traffic. Some cookies are necessary for the site to function.</p>
-      <div class="cookie-buttons">
-        <button id="accept-all" class="btn accept-all">Accept All</button>
-        <button id="reject-all" class="btn reject-all">Reject All</button>
-        <button id="customize" class="btn customize">Customize</button>
+  <!-- Cookie Disclaimer Banner -->
+<div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-container">
+
+    <!-- ⭐ NEW: banner layout wrapper -->
+    <div class="cookie-banner-layout">
+
+      <!-- TEXT + BUTTONS (existing content, untouched) -->
+      <div class="cookie-banner-content">
+        <p>
+          We use cookies to improve your browsing experience, provide personalized content,
+          and analyze site traffic. Some cookies are necessary for the site to function.
+        </p>
+
+        <div class="cookie-buttons">
+          <button id="accept-all" class="btn accept-all">Accept All</button>
+          <button id="reject-all" class="btn reject-all">Reject All</button>
+          <button id="customize" class="btn customize">Customize</button>
+        </div>
+
+        <a href="cookie-policy.html" class="cookie-link">Cookie Policy</a>
       </div>
-      <a href="cookie-policy.html" class="cookie-link">Cookie Policy</a>
-      <div id="cookie-settings" class="cookie-settings hidden">
-        <h3>Cookie Settings</h3>
-        <div class="cookie-option">
-          <input type="checkbox" id="necessary" checked disabled>
-          <label for="necessary">Necessary Cookies (always enabled for site functionality)</label>
-        </div>
-        <div class="cookie-option">
-          <input type="checkbox" id="analytics">
-          <label for="analytics">Analytics Cookies (help us improve the site)</label>
-        </div>
-        <div class="cookie-option">
-          <input type="checkbox" id="marketing">
-          <label for="marketing">Marketing Cookies (for personalized ads)</label>
-        </div>
-        <button id="save-settings" class="btn save-settings">Save Settings</button>
-      </div>
+
+      <!-- ⭐ NEW: GIF ATTACHED TO BANNER -->
+     <div class="cookie-banner-gif" aria-hidden="true">
+  <img
+    id="cookie-gif-img"
+    src="./assets/cookies.gif"
+    alt=""
+  >
+</div>
+
+
     </div>
+
+    <!-- SETTINGS (unchanged) -->
+    <div id="cookie-settings" class="cookie-settings hidden">
+      <h3>Cookie Settings</h3>
+      <div class="cookie-option">
+        <input type="checkbox" id="necessary" checked disabled>
+        <label for="necessary">Necessary Cookies (always enabled for site functionality)</label>
+      </div>
+      <div class="cookie-option">
+        <input type="checkbox" id="analytics">
+        <label for="analytics">Analytics Cookies (help us improve the site)</label>
+      </div>
+      <div class="cookie-option">
+        <input type="checkbox" id="marketing">
+        <label for="marketing">Marketing Cookies (for personalized ads)</label>
+      </div>
+      <button id="save-settings" class="btn save-settings">Save Settings</button>
+    </div>
+
   </div>
+</div>
+
 
   <script src="script.js"></script>
 </body>
