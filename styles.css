@@ -217,48 +217,51 @@ li{
 }
 
 /* ===============================
-   COOKIE BANNER
+   COOKIE BANNER (SMALL VERSION)
    =============================== */
 .cookie-banner{
   position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
+  bottom:12px;
+  left:50%;
+  transform:translateX(-50%);
   background:rgba(255,255,255,0.95);
   backdrop-filter:blur(6px);
-  border-top:1px solid rgba(0,0,0,0.06);
-  padding:18px;
+  border:1px solid rgba(0,0,0,0.1);
+  border-radius:12px;
+  padding:12px 14px;
   z-index:1000;
   display:none;
+  max-width:320px;
+  width:90%;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  text-align:center;
+  font-size:0.78rem;
 }
 
 .cookie-container{
-  max-width:480px; /* smaller than main container */
-  width: calc(100% - 20px); /* responsive on small screens */
-  margin:0 auto;
   display:flex;
   flex-direction:column;
-  gap:8px; /* breathing room between elements */
-  padding:10px; /* optional padding inside banner */
-  text-align:center; /* center text and buttons */
+  gap:6px;
+  align-items:center;
+  justify-content:center;
 }
 
 .cookie-container p{
   margin:0;
-  font-size:0.82rem;
+  font-size:0.78rem;
   color:#102127;
 }
 
 .cookie-buttons{
   display:flex;
-  gap:10px;
+  gap:6px;
   flex-wrap:wrap;
-  justify-content:center; /* center buttons */
+  justify-content:center;
 }
 
 .btn{
-  padding:7px 11px;
-  font-size:0.82rem;
+  padding:5px 10px;
+  font-size:0.75rem;
   border-radius:6px;
   cursor:pointer;
   font-weight:600;
