@@ -339,19 +339,31 @@ Whether you prefer face-to-face sessions or the convenience of online therapy, I
         <a href="cookie-policy.html" class="cookie-link">Cookie Policy</a>
       </div>
 
-      <!-- ⭐ NEW: GIF ATTACHED TO BANNER -->
-     <div class="cookie-banner-gif" aria-hidden="true">
-  <img
-    id="cookie-gif-img"
-    src="./assets/cookies.gif"
-    alt=""
-  >
-</div>
 
 
     </div>
 
-    
+    <!-- SETTINGS (unchanged) -->
+    <div id="cookie-settings" class="cookie-settings hidden">
+      <h3>Cookie Settings</h3>
+      <div class="cookie-option">
+        <input type="checkbox" id="necessary" checked disabled>
+        <label for="necessary">Necessary Cookies (always enabled for site functionality)</label>
+      </div>
+      <div class="cookie-option">
+        <input type="checkbox" id="analytics">
+        <label for="analytics">Analytics Cookies (help us improve the site)</label>
+      </div>
+      <div class="cookie-option">
+        <input type="checkbox" id="marketing">
+        <label for="marketing">Marketing Cookies (for personalized ads)</label>
+      </div>
+      <button id="save-settings" class="btn save-settings">Save Settings</button>
+    </div>
+
+  </div>
+</div>
+
 
   <script src="script.js"></script>
 </body>
