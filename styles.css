@@ -44,7 +44,10 @@ body{
 }
 .header-inner{display:flex;align-items:center;justify-content:space-between}
 .brand{font-weight:700;color:var(--accent);letter-spacing:-0.01em;display:inline-flex;align-items:center;gap:12px}
-.brand-icon{width:44px;height:44px;display:inline-block}
+.brand-icon {
+  height: 89px;   /* was 40px */
+  width: auto;
+}
 .nav{position:relative}
 .menu-btn{background:transparent;border:1px solid transparent;padding:8px 12px;border-radius:6px;cursor:pointer}
 .dropdown{list-style:none;margin:20px 0 0;padding:8px;background:#fff;border:1px solid #eee;border-radius:6px;position:absolute;right:0;min-width:160px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
