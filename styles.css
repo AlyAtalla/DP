@@ -11,13 +11,13 @@
 *{box-sizing:border-box}
 
 html{
-  font-size:18px; /* REAL base size */
+  font-size:17px;
 }
 
 body{
   margin:0;
   font-family:"Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height:1.75;
+  line-height:1.7;
   color:#1f2937;
   background:var(--bg);
 }
@@ -28,11 +28,11 @@ body{
 .container{
   max-width:900px;
   width:calc(100% - 40px);
-  margin:32px auto;
-  padding:32px;
+  margin:28px auto;
+  padding:28px;
   background:rgba(255,255,255,0.96);
   border-radius:14px;
-  box-shadow:0 10px 36px rgba(8,20,28,0.08);
+  box-shadow:0 10px 34px rgba(8,20,28,0.08);
 }
 
 /* ===============================
@@ -44,6 +44,7 @@ body{
   z-index:-1;
   overflow:hidden;
 }
+
 .bg-media img{
   width:100%;
   height:100%;
@@ -71,12 +72,12 @@ body{
   gap:14px;
   font-family:"Source Serif 4", serif;
   font-weight:700;
-  font-size:1.4rem;
+  font-size:1.3rem;
   color:var(--accent);
 }
 
 .brand-icon{
-  height:96px;
+  height:90px;
   width:auto;
 }
 
@@ -88,10 +89,10 @@ body{
 .menu-btn{
   background:transparent;
   border:1px solid transparent;
-  padding:10px 14px;
+  padding:9px 13px;
   border-radius:8px;
   cursor:pointer;
-  font-size:0.95rem;
+  font-size:0.9rem;
 }
 
 .dropdown{
@@ -102,9 +103,10 @@ body{
   border-radius:8px;
   position:absolute;
   right:0;
-  min-width:170px;
+  min-width:165px;
   box-shadow:0 8px 22px rgba(0,0,0,0.08);
 }
+
 .dropdown a{
   text-decoration:none;
   color:var(--accent);
@@ -115,20 +117,20 @@ body{
    HERO
    =============================== */
 .hero{
-  padding:80px 0 40px;
+  padding:72px 0 36px;
 }
 
 .hero h1{
   font-family:"Source Serif 4", serif;
-  font-size:2.8rem;
+  font-size:2.5rem;
   line-height:1.15;
-  margin-bottom:1.2rem;
+  margin-bottom:1.1rem;
   color:#072b3a;
 }
 
 .hero p{
-  font-size:1.2rem;
-  max-width:800px;
+  font-size:1.15rem;
+  max-width:780px;
   color:#16323a;
 }
 
@@ -137,7 +139,7 @@ body{
    =============================== */
 section h2{
   font-family:"Source Serif 4", serif;
-  font-size:2rem;
+  font-size:1.75rem;
   margin-bottom:1rem;
   color:#0b5677;
 }
@@ -145,7 +147,7 @@ section h2{
 .about,
 .services,
 .contact{
-  font-size:1.05rem;
+  font-size:1.02rem;
   color:#102127;
 }
 
@@ -158,7 +160,7 @@ ul{
 }
 
 li{
-  margin-bottom:0.6rem;
+  margin-bottom:0.55rem;
 }
 
 /* ===============================
@@ -171,9 +173,9 @@ li{
 .contact-form input,
 .contact-form textarea{
   width:100%;
-  padding:14px;
-  margin:18px 0;
-  font-size:1rem;
+  padding:13px;
+  margin:16px 0;
+  font-size:0.95rem;
   border-radius:10px;
   border:1px solid #d6dfe3;
 }
@@ -182,8 +184,8 @@ li{
   background:var(--accent);
   color:#fff;
   border:none;
-  padding:14px 22px;
-  font-size:1rem;
+  padding:13px 20px;
+  font-size:0.95rem;
   border-radius:10px;
   cursor:pointer;
   font-weight:600;
@@ -193,9 +195,9 @@ li{
    FOOTER
    =============================== */
 .site-footer{
-  margin-top:40px;
-  padding:28px 0;
-  font-size:0.9rem;
+  margin-top:36px;
+  padding:26px 0;
+  font-size:0.85rem;
   color:var(--muted);
   text-align:center;
 }
@@ -206,12 +208,78 @@ li{
 .social-icons{
   display:flex;
   justify-content:center;
-  gap:18px;
+  gap:16px;
 }
 
 .social-icon{
-  width:30px;
-  height:30px;
+  width:28px;
+  height:28px;
+}
+
+/* ===============================
+   COOKIE BANNER
+   =============================== */
+.cookie-banner{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(6px);
+  border-top:1px solid rgba(0,0,0,0.06);
+  padding:18px;
+  z-index:1000;
+  display:none;
+}
+
+.cookie-container{
+  max-width:900px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.cookie-container p{
+  margin:0;
+  font-size:0.82rem;
+  color:#102127;
+}
+
+.cookie-buttons{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:7px 11px;
+  font-size:0.82rem;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:600;
+  border:none;
+}
+
+.accept-all{
+  background:var(--accent);
+  color:#fff;
+}
+
+.reject-all{
+  background:#666;
+  color:#fff;
+}
+
+.customize{
+  background:#fff;
+  border:1px solid #ccc;
+  color:var(--accent);
+}
+
+.save-settings{
+  background:var(--accent);
+  color:#fff;
 }
 
 /* ===============================
