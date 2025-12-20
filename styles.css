@@ -191,3 +191,76 @@ main section, .hero{opacity:0;transform:translateY(18px);transition:opacity 560m
   .header-inner{padding:12px}
   .dropdown{right:8px;left:auto}
 }
+
+/* ===============================
+   Cute Animated Characters
+   =============================== */
+
+/* Floating animation */
+@keyframes floaty {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* Waving animation */
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(12deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Cookie Monster character */
+.cookie-monster {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 20px 0 30px;
+  padding: 16px 20px;
+  background: #f2fbff;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  animation: floaty 4s ease-in-out infinite;
+}
+
+.cookie-monster .monster {
+  font-size: 46px;
+}
+
+.cookie-monster .cookie {
+  font-size: 32px;
+  animation: wave 2.5s ease-in-out infinite;
+}
+
+.cookie-monster p {
+  margin: 0;
+  font-size: 15px;
+  color: #102127;
+}
+
+/* Contact form helper character */
+.form-helper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f9f9f9;
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  animation: floaty 3.5s ease-in-out infinite;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+
+.form-helper .character {
+  font-size: 34px;
+}
+
+.form-helper .hand {
+  font-size: 22px;
+  animation: wave 2s ease-in-out infinite;
+}
+
+.form-helper span {
+  font-size: 14px;
+  color: #16323a;
+}
