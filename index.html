@@ -198,21 +198,76 @@ Whether you prefer face-to-face sessions or the convenience of online therapy, I
       <p>Phone: +357 99084397</p>
       <p>WhatsApp: <a href="https://wa.me/+357 99084397?text=Hello%20I%20would%20like%20to%20inquire%20about%20your%20services" target="_blank" rel="noopener noreferrer">+357 99084397</a></p>
 
-      <form action="https://formspree.io/f/xbdrdyjp" method="POST" id="contactForm" class="contact-form">
-        <label>
-          Your name:
-          <input type="text" name="name" required>
-        </label>
-        <label>
-          Your email:
-          <input type="email" name="email" required>
-        </label>
-        <label>
-          Your message:
-          <textarea name="message" required></textarea>
-        </label>
-        <button type="submit">Send</button>
-      </form>
+     <form action="https://formspree.io/f/xbdrdyjp" method="POST" id="contactForm" class="contact-form">
+  <label>
+    *First Name:
+    <input type="text" name="first_name" placeholder="Your first name" required>
+  </label>
+
+  <label>
+    *Last Name:
+    <input type="text" name="last_name" placeholder="Your last name" required>
+  </label>
+
+  <label>
+    *Phone Number:
+    <input type="tel" name="phone" placeholder="+357 9xxxxxxx" required>
+  </label>
+
+  <label>
+    *Email:
+    <input type="email" name="email" placeholder="you@example.com" required>
+  </label>
+
+  <label>
+    Availability (please indicate days/hours or specific dates):
+    <input type="text" name="availability" placeholder="e.g., Monday-Friday, 18:00-21:00" required>
+  </label>
+
+  <label>
+    Have you received services from a psychologist or psychiatrist in the past?*
+    <select name="previous_services" required>
+      <option value="">Select an option</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+  </label>
+
+  <label>
+    Are you using medication as a treatment option for a current psychological condition?*
+    <select name="medication" required>
+      <option value="">Select an option</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+  </label>
+
+  <label>
+    I am currently interested in:
+    <select name="service_interest" required>
+      <option value="">Select a service</option>
+      <option value="Individual Therapy">Individual Therapy</option>
+      <option value="Group Therapy">Group Therapy</option>
+      <option value="Family Mediation">Family Mediation</option>
+      <option value="Forensic Psychological Assessment">Forensic Psychological Assessment</option>
+      <option value="Forensic Report Writing">Forensic Report Writing</option>
+      <option value="Expert Witness Testimony">Expert Witness Testimony</option>
+      <option value="Legal Consultancy">Legal Consultancy</option>
+      <option value="MMPI-2 Personality Assessment">MMPI-2 Personality Assessment</option>
+      <option value="Forensic Risk Assessment">Forensic Risk Assessment</option>
+      <option value="Capacity Evaluations">Capacity Evaluations</option>
+      <option value="Free Initial Consultation">Free Initial Consultation</option>
+    </select>
+  </label>
+
+  <label>
+    <input type="checkbox" name="data_protection" required>
+    I have read and understood the Data Protection Policy *
+  </label>
+
+  <button type="submit">Send</button>
+</form>
+
     </section>
   </main>
 
