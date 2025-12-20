@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded',function(){
       if(dropdown.hasAttribute('hidden')) dropdown.removeAttribute('hidden'); else dropdown.setAttribute('hidden','');
     });
 
-    // Close dropdown on outside click
     document.addEventListener('click',function(e){
       if(!menuBtn.contains(e.target) && !dropdown.contains(e.target)){
         dropdown.setAttribute('hidden','');
@@ -18,7 +17,6 @@ document.addEventListener('DOMContentLoaded',function(){
     });
   }
 
-  // Smooth reveal for sections using IntersectionObserver
   const sections = document.querySelectorAll('main section, .hero');
   if('IntersectionObserver' in window){
     const obs = new IntersectionObserver((entries)=>{
@@ -29,26 +27,14 @@ document.addEventListener('DOMContentLoaded',function(){
       });
     },{threshold:0.15});
     sections.forEach(s=>obs.observe(s));
-  } else {
-    // fallback: reveal all
-    sections.forEach(s=>s.classList.add('in-view'));
-  }
+  } else { sections.forEach(s=>s.classList.add('in-view')); }
 
-  // Subtle parallax on bg-media
   const bg = document.querySelector('.bg-media img');
   if(bg){
     let latestKnownScrollY = 0;
     let ticking = false;
-    function onScroll(){
-      latestKnownScrollY = window.scrollY;
-      requestTick();
-    }
-    function requestTick(){
-      if(!ticking){
-        requestAnimationFrame(update);
-      }
-      ticking = true;
-    }
+    function onScroll(){ latestKnownScrollY = window.scrollY; requestTick(); }
+    function requestTick(){ if(!ticking){ requestAnimationFrame(update); } ticking = true; }
     function update(){
       ticking = false;
       const translate = Math.round(latestKnownScrollY * 0.15);
@@ -68,14 +54,9 @@ document.addEventListener('DOMContentLoaded',function(){
   const marketingCheckbox = document.getElementById('marketing');
 
   function saveConsent(necessary, analytics, marketing) {
-    const consent = {
-      necessary: true, // always true
-      analytics: analytics,
-      marketing: marketing,
-      consentDate: new Date().toISOString()
-    };
+    const consent = { necessary:true, analytics, marketing, consentDate:new Date().toISOString() };
     localStorage.setItem('cookieConsent', JSON.stringify(consent));
-    cookieBanner.style.display = 'none';
+    cookieBanner.style.display='none';
   }
 
   function loadConsent() {
@@ -89,47 +70,24 @@ document.addEventListener('DOMContentLoaded',function(){
     return null;
   }
 
-  if (cookieBanner) {
+  if(cookieBanner){
     const existingConsent = loadConsent();
-    if (!existingConsent) {
-      cookieBanner.style.display = 'block';
-    }
+    if(!existingConsent) cookieBanner.style.display='block';
 
-    acceptAllBtn.addEventListener('click', () => saveConsent(true, true, true));
-    rejectAllBtn.addEventListener('click', () => saveConsent(true, false, false));
-    customizeBtn.addEventListener('click', () => {
-      cookieSettings.classList.toggle('hidden');
-    });
-    saveSettingsBtn.addEventListener('click', () => {
-      const analytics = analyticsCheckbox.checked;
-      const marketing = marketingCheckbox.checked;
-      saveConsent(true, analytics, marketing);
+    acceptAllBtn.addEventListener('click', ()=>saveConsent(true,true,true));
+    rejectAllBtn.addEventListener('click', ()=>saveConsent(true,false,false));
+    customizeBtn.addEventListener('click', ()=>cookieSettings.classList.toggle('hidden'));
+    saveSettingsBtn.addEventListener('click', ()=>{
+      saveConsent(true, analyticsCheckbox.checked, marketingCheckbox.checked);
     });
 
-    // Manage cookies link
     const manageCookiesLink = document.getElementById('manage-cookies');
-    if (manageCookiesLink) {
-      manageCookiesLink.addEventListener('click', (e) => {
+    if(manageCookiesLink){
+      manageCookiesLink.addEventListener('click', (e)=>{
         e.preventDefault();
-        cookieBanner.style.display = 'block';
+        cookieBanner.style.display='block';
         cookieSettings.classList.remove('hidden');
       });
     }
   }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const gif = document.getElementById('cookie-gif-img');
-  if (!gif) return;
-
-  // ⏱️ duration of ONE loop of the GIF (seconds)
-  // ⚠️ You must adjust this once (see note below)
-  const oneLoopDuration = 2.5;
-
-  // Play twice
-  const totalDuration = oneLoopDuration * 2 * 1000;
-
-  setTimeout(() => {
-    gif.src = './assets/cookies-static.jfif';
-  }, totalDuration);
 });
