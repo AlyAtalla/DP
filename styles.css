@@ -233,11 +233,14 @@ li{
 }
 
 .cookie-container{
-  max-width:900px;
+  max-width:480px; /* smaller than main container */
+  width: calc(100% - 20px); /* responsive on small screens */
   margin:0 auto;
   display:flex;
   flex-direction:column;
-  gap:2px;
+  gap:8px; /* breathing room between elements */
+  padding:10px; /* optional padding inside banner */
+  text-align:center; /* center text and buttons */
 }
 
 .cookie-container p{
@@ -250,6 +253,7 @@ li{
   display:flex;
   gap:10px;
   flex-wrap:wrap;
+  justify-content:center; /* center buttons */
 }
 
 .btn{
