@@ -5,20 +5,12 @@
   --container:1000px;
 }
 *{box-sizing:border-box}
-html{font-size:16px}
-body{
-  font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;
-  line-height:1.65;
-  color:#102127;
-  margin:0;
-  background-color:var(--bg);
-  /* page background is provided by the responsive <picture> element in the DOM */
-  background-image:none;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  text-rendering:optimizeLegibility;
+html{font-size:25px}
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.75;
+  color: #1f2937; /* softer than pure black */
 }
-
 .container{
   max-width:900px;
   width:calc(100% - 40px);
@@ -45,7 +37,7 @@ body{
 .header-inner{display:flex;align-items:center;justify-content:space-between}
 .brand{font-weight:700;color:var(--accent);letter-spacing:-0.01em;display:inline-flex;align-items:center;gap:12px}
 .brand-icon {
-  height: 89px;   /* was 40px */
+  height: 97px;   /* was 40px */
   width: auto;
 }
 .nav{position:relative}
@@ -330,3 +322,4 @@ main section, .hero{opacity:0;transform:translateY(18px);transition:opacity 560m
   width: 28px;
   height: 28px;
 }
+
