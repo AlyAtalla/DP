@@ -273,7 +273,7 @@ li{
 
   @media (max-width: 480px) {
   .cookie-banner {
-    width: calc(75% - 15px);
+    width: calc(100% - 7px);
     max-width: none;
     bottom: 12px;
   }
