@@ -270,6 +270,15 @@ li{
     padding: 12px;
   }
 
+
+  @media (max-width: 480px) {
+  .cookie-banner {
+    width: calc(100% - 24px);
+    max-width: none;
+    bottom: 12px;
+  }
+}
+
   .cookie-banner p {
     font-size: 0.78rem;
     line-height: 1.4;
