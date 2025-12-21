@@ -1,9 +1,10 @@
 :root{
-  --bg:#ffffff;
+  --bg:#B4C6DC; /* updated background color */
   --accent:#0b5677;
   --muted:#666;
   --container:1000px;
 }
+
 
 /* ===============================
    BASE RESET & TYPOGRAPHY
@@ -18,6 +19,14 @@ body{
   line-height:1.7;
   color:#1f2937;
   background:var(--bg);
+}
+
+.bg-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(180,198,220,0.5); /* #B4C6DC with 50% opacity */
+  pointer-events: none;
 }
 
 /* ===============================
