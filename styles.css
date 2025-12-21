@@ -10,7 +10,9 @@
    =============================== */
 *{box-sizing:border-box}
 
-html{font-size:17px}
+html{
+  font-size:17px;
+}
 
 body{
   margin:0;
@@ -50,12 +52,9 @@ body{
 }
 
 /* ===============================
-   HEADER (FIXED STACKING)
+   HEADER
    =============================== */
 .site-header{
-  position:sticky;
-  top:0;
-  z-index:10000;
   background:rgba(255,255,255,0.78);
   backdrop-filter:blur(6px);
   border-bottom:1px solid rgba(0,0,0,0.06);
@@ -67,9 +66,6 @@ body{
   justify-content:space-between;
 }
 
-/* ===============================
-   BRAND
-   =============================== */
 .brand{
   display:flex;
   align-items:center;
@@ -86,12 +82,9 @@ body{
 }
 
 /* ===============================
-   NAV (MENU FIX)
+   NAV
    =============================== */
-.nav{
-  position:relative;
-  z-index:10001;
-}
+.nav{position:relative}
 
 .menu-btn{
   background:transparent;
@@ -100,31 +93,18 @@ body{
   border-radius:8px;
   cursor:pointer;
   font-size:0.9rem;
-  position:relative;
-  z-index:10002;
 }
 
-/* Dropdown hidden by default */
 .dropdown{
   list-style:none;
-  margin:12px 0 0;
+  margin:18px 0 0;
   padding:10px;
   background:#fff;
   border-radius:8px;
   position:absolute;
   right:0;
   min-width:165px;
-  box-shadow:0 8px 22px rgba(0,0,0,0.12);
-  display:none;
-}
-
-/* Visible state (JS toggles this) */
-.dropdown.show{
-  display:block;
-}
-
-.dropdown li{
-  margin:6px 0;
+  box-shadow:0 8px 22px rgba(0,0,0,0.08);
 }
 
 .dropdown a{
@@ -171,16 +151,24 @@ section h2{
   color:#102127;
 }
 
-p{max-width:70ch}
+p{
+  max-width:70ch;
+}
 
-ul{padding-left:1.2rem}
+ul{
+  padding-left:1.2rem;
+}
 
-li{margin-bottom:0.55rem}
+li{
+  margin-bottom:0.55rem;
+}
 
 /* ===============================
    CONTACT FORM
    =============================== */
-.contact-form{max-width:640px}
+.contact-form{
+  max-width:640px;
+}
 
 .contact-form input,
 .contact-form textarea{
@@ -229,54 +217,159 @@ li{margin-bottom:0.55rem}
 }
 
 /* ===============================
-   COOKIE BANNER (COMPACT + SAFE)
+   COOKIE BANNER (SMALL VERSION)
    =============================== */
-.cookie-banner{
-  position:fixed;
-  left:50%;
-  bottom:16px;
-  transform:translateX(-50%);
-  max-width:520px;
-  padding:14px 16px;
-  background:rgba(20,24,32,0.96);
-  color:#fff;
-  font-weight:600;
-  border-radius:14px;
-  z-index:9999;
-  backdrop-filter:blur(12px);
-  box-shadow:0 10px 30px rgba(0,0,0,0.35);
+/* === COOKIE BANNER FIX (MOBILE SAFE) === */
+
+.cookie-banner {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 9999;
+  background: rgba(20, 24, 32, 0.96);
+  backdrop-filter: blur(6px);
+  padding: 14px;
+  pointer-events: auto;
 }
 
-.cookie-banner p{
-  font-size:14px;
-  line-height:1.45;
-  margin-bottom:10px;
+.cookie-container {
+  max-width: 980px;
+  margin: 0 auto;
+  background: #0f131b;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 -8px 30px rgba(0,0,0,0.35);
+  pointer-events: auto;
 }
 
-.cookie-buttons{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
+/* Ensure ALL interactive elements work on touch */
+.cookie-banner *,
+.cookie-banner button,
+.cookie-banner input,
+.cookie-banner label {
+  pointer-events: auto;
+  touch-action: manipulation;
 }
 
-.cookie-buttons button{
-  padding:8px 14px;
-  font-size:13px;
-  border-radius:999px;
-  font-weight:700;
-  border:none;
-  cursor:pointer;
+/* Buttons – mobile friendly */
+.cookie-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
 }
 
-.cookie-buttons button.secondary{
-  background:transparent;
-  color:#fff;
-  border:1px solid rgba(255,255,255,0.6);
+.cookie-buttons button {
+  flex: 1 1 auto;
+  min-height: 44px; /* Apple / Android tap target */
+  font-size: 0.85rem;
 }
 
-/* ===============================
-   MOBILE
-   =============================== */
-@media (max-width:600px){
-  .brand-icon{height:64px}
+/* Mobile layout adjustments */
+@media (max-width: 600px) {
+  .cookie-container {
+    padding: 12px;
+  }
+
+
+  @media (max-width: 480px) {
+  .cookie-banner {
+    width: calc(100% - 7px);
+    max-width: none;
+    bottom: 12px;
+  }
+}
+
+  .cookie-banner p {
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+
+  .cookie-banner label {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.78rem;
+  }
+}
+
+/* === COOKIE BANNER TEXT CLARITY === */
+
+.cookie-banner,
+.cookie-banner p,
+.cookie-banner label {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.cookie-banner p {
+  letter-spacing: 0.2px;
+}
+
+.cookie-banner strong {
+  font-weight: 700;
+}
+
+/* Buttons: clearer contrast */
+.cookie-buttons button {
+  font-weight: 700;
+  color: #0f131b;
+  background: #ffffff;
+  border: none;
+}
+
+.cookie-buttons button.secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.6);
+}
+
+/* Checkbox labels clearer */
+.cookie-banner input[type="checkbox"] + label,
+.cookie-banner label {
+  opacity: 0.95;
+}
+
+/* === COOKIE BANNER COMPACT SIZE === */
+
+.cookie-banner {
+  max-width: 520px;
+  padding: 14px 16px;
+  border-radius: 14px;
+
+  /* Positioning */
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+
+  /* Visual polish */
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* Reduce paragraph spacing */
+.cookie-banner p {
+  font-size: 14px;
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+
+/* Buttons inline & compact */
+.cookie-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cookie-buttons button {
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: 999px;
+}
+
+/* Checkbox section tighter */
+.cookie-options {
+  margin-top: 8px;
+}
+
+.cookie-options label {
+  font-size: 13px;
 }
