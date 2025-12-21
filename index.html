@@ -263,19 +263,44 @@ Whether you prefer face-to-face sessions or the convenience of online therapy, I
     </div>
   </footer>
 
+  <!-- COOKIE BANNER (ONLY ADDITION) -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-container">
+      <p>This website uses cookies to enhance your browsing experience and to comply with data protection regulations.</p>
+      <div class="cookie-buttons">
+        <button class="btn accept-all" id="acceptCookies">Accept</button>
+        <button class="btn reject-all" id="rejectCookies">Reject</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     const menuBtn = document.getElementById('menuBtn');
     const dropdown = document.getElementById('dropdown');
 
     menuBtn.addEventListener('click', () => {
       const isHidden = dropdown.hasAttribute('hidden');
-      if (isHidden) {
-        dropdown.removeAttribute('hidden');
-        menuBtn.setAttribute('aria-expanded', 'true');
-      } else {
-        dropdown.setAttribute('hidden', '');
-        menuBtn.setAttribute('aria-expanded', 'false');
-      }
+      dropdown.toggleAttribute('hidden');
+      menuBtn.setAttribute('aria-expanded', String(isHidden));
+    });
+
+    // Cookie banner logic
+    const cookieBanner = document.getElementById('cookieBanner');
+    const acceptBtn = document.getElementById('acceptCookies');
+    const rejectBtn = document.getElementById('rejectCookies');
+
+    if (!localStorage.getItem('cookieConsent')) {
+      cookieBanner.style.display = 'block';
+    }
+
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'accepted');
+      cookieBanner.style.display = 'none';
+    });
+
+    rejectBtn.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'rejected');
+      cookieBanner.style.display = 'none';
     });
   </script>
 </body>
