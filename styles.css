@@ -319,39 +319,48 @@ li{
   opacity: 0.95;
 }
 
-/* === COOKIE BANNER TEXT CLARITY === */
+/* === COOKIE BANNER COMPACT SIZE === */
 
-.cookie-banner,
-.cookie-banner p,
-.cookie-banner label {
-  color: #ffffff;
-  font-weight: 600;
+.cookie-banner {
+  max-width: 520px;
+  padding: 14px 16px;
+  border-radius: 14px;
+
+  /* Positioning */
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+
+  /* Visual polish */
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
+/* Reduce paragraph spacing */
 .cookie-banner p {
-  letter-spacing: 0.2px;
+  font-size: 14px;
+  line-height: 1.45;
+  margin-bottom: 10px;
 }
 
-.cookie-banner strong {
-  font-weight: 700;
+/* Buttons inline & compact */
+.cookie-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-/* Buttons: clearer contrast */
 .cookie-buttons button {
-  font-weight: 700;
-  color: #0f131b;
-  background: #ffffff;
-  border: none;
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: 999px;
 }
 
-.cookie-buttons button.secondary {
-  background: transparent;
-  color: #ffffff;
-  border: 1px solid rgba(255,255,255,0.6);
+/* Checkbox section tighter */
+.cookie-options {
+  margin-top: 8px;
 }
 
-/* Checkbox labels clearer */
-.cookie-banner input[type="checkbox"] + label,
-.cookie-banner label {
-  opacity: 0.95;
+.cookie-options label {
+  font-size: 13px;
 }
