@@ -263,45 +263,101 @@ Whether you prefer face-to-face sessions or the convenience of online therapy, I
     </div>
   </footer>
 
-  <!-- COOKIE BANNER (ONLY ADDITION) -->
-  <div class="cookie-banner" id="cookieBanner">
-    <div class="cookie-container">
-      <p>This website uses cookies to enhance your browsing experience and to comply with data protection regulations.</p>
-      <div class="cookie-buttons">
-        <button class="btn accept-all" id="acceptCookies">Accept</button>
-        <button class="btn reject-all" id="rejectCookies">Reject</button>
+ <!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-container">
+
+    <div style="display:flex; gap:14px; align-items:flex-start;">
+      <!-- Cookie Monster -->
+      <div aria-hidden="true" style="flex-shrink:0">
+        <svg width="46" height="46" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="48" fill="#6ec1e4"/>
+          <circle cx="35" cy="40" r="10" fill="#fff"/>
+          <circle cx="65" cy="40" r="10" fill="#fff"/>
+          <circle cx="35" cy="42" r="5" fill="#000"/>
+          <circle cx="65" cy="42" r="5" fill="#000"/>
+          <ellipse cx="50" cy="65" rx="22" ry="14" fill="#000"/>
+        </svg>
+      </div>
+
+      <div>
+        <p style="margin:0 0 6px 0;">
+          <strong>Hello!</strong> This website uses cookies 🍪 to ensure proper functionality and improve your experience.
+        </p>
+        <p style="margin:0; font-size:0.78rem;">
+          You can manage your preferences at any time.  
+          <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Read our Cookie Policy</a>
+        </p>
       </div>
     </div>
+
+    <div style="margin-top:12px; font-size:0.8rem;">
+      <label>
+        <input type="checkbox" checked disabled>
+        Strictly necessary cookies (required)
+      </label><br>
+
+      <label>
+        <input type="checkbox" id="analyticsCookies">
+        Analytics cookies
+      </label><br>
+
+      <label>
+        <input type="checkbox" id="marketingCookies">
+        Marketing cookies
+      </label>
+    </div>
+
+    <div class="cookie-buttons" style="margin-top:12px;">
+      <button class="btn accept-all" id="acceptAllCookies">Accept all</button>
+      <button class="btn save-settings" id="saveCookieSettings">Save preferences</button>
+      <button class="btn reject-all" id="rejectAllCookies">Reject non-essential</button>
+    </div>
+
   </div>
+</div>
+
 
   <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const dropdown = document.getElementById('dropdown');
+  const cookieBanner = document.getElementById('cookieBanner');
+  const acceptAll = document.getElementById('acceptAllCookies');
+  const rejectAll = document.getElementById('rejectAllCookies');
+  const saveSettings = document.getElementById('saveCookieSettings');
 
-    menuBtn.addEventListener('click', () => {
-      const isHidden = dropdown.hasAttribute('hidden');
-      dropdown.toggleAttribute('hidden');
-      menuBtn.setAttribute('aria-expanded', String(isHidden));
-    });
+  const analytics = document.getElementById('analyticsCookies');
+  const marketing = document.getElementById('marketingCookies');
 
-    // Cookie banner logic
-    const cookieBanner = document.getElementById('cookieBanner');
-    const acceptBtn = document.getElementById('acceptCookies');
-    const rejectBtn = document.getElementById('rejectCookies');
+  if (!localStorage.getItem('cookieConsent')) {
+    cookieBanner.style.display = 'block';
+  }
 
-    if (!localStorage.getItem('cookieConsent')) {
-      cookieBanner.style.display = 'block';
-    }
+  acceptAll.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', JSON.stringify({
+      necessary: true,
+      analytics: true,
+      marketing: true
+    }));
+    cookieBanner.style.display = 'none';
+  });
 
-    acceptBtn.addEventListener('click', () => {
-      localStorage.setItem('cookieConsent', 'accepted');
-      cookieBanner.style.display = 'none';
-    });
+  rejectAll.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', JSON.stringify({
+      necessary: true,
+      analytics: false,
+      marketing: false
+    }));
+    cookieBanner.style.display = 'none';
+  });
 
-    rejectBtn.addEventListener('click', () => {
-      localStorage.setItem('cookieConsent', 'rejected');
-      cookieBanner.style.display = 'none';
-    });
-  </script>
+  saveSettings.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', JSON.stringify({
+      necessary: true,
+      analytics: analytics.checked,
+      marketing: marketing.checked
+    }));
+    cookieBanner.style.display = 'none';
+  });
+</script>
+
 </body>
 </html>
