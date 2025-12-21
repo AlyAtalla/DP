@@ -282,3 +282,39 @@ li{
   }
 }
 
+/* === COOKIE BANNER TEXT CLARITY === */
+
+.cookie-banner,
+.cookie-banner p,
+.cookie-banner label {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.cookie-banner p {
+  letter-spacing: 0.2px;
+}
+
+.cookie-banner strong {
+  font-weight: 700;
+}
+
+/* Buttons: clearer contrast */
+.cookie-buttons button {
+  font-weight: 700;
+  color: #0f131b;
+  background: #ffffff;
+  border: none;
+}
+
+.cookie-buttons button.secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.6);
+}
+
+/* Checkbox labels clearer */
+.cookie-banner input[type="checkbox"] + label,
+.cookie-banner label {
+  opacity: 0.95;
+}
