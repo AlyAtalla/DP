@@ -219,85 +219,66 @@ li{
 /* ===============================
    COOKIE BANNER (SMALL VERSION)
    =============================== */
-.cookie-banner{
-  position:fixed;
-  bottom:12px;
-  left:50%;
-  transform:translateX(-50%);
-  background:rgba(255,255,255,0.95);
-  backdrop-filter:blur(6px);
-  border:1px solid rgba(0,0,0,0.1);
-  border-radius:12px;
-  padding:12px 14px;
-  z-index:1000;
-  display:none;
-  max-width:320px;
-  width:90%;
-  box-shadow:0 6px 18px rgba(0,0,0,0.08);
-  text-align:center;
-  font-size:0.78rem;
+/* === COOKIE BANNER FIX (MOBILE SAFE) === */
+
+.cookie-banner {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 9999;
+  background: rgba(20, 24, 32, 0.96);
+  backdrop-filter: blur(6px);
+  padding: 14px;
+  pointer-events: auto;
 }
 
-.cookie-container{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-  align-items:center;
-  justify-content:center;
+.cookie-container {
+  max-width: 980px;
+  margin: 0 auto;
+  background: #0f131b;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 -8px 30px rgba(0,0,0,0.35);
+  pointer-events: auto;
 }
 
-.cookie-container p{
-  margin:0;
-  font-size:0.78rem;
-  color:#102127;
+/* Ensure ALL interactive elements work on touch */
+.cookie-banner *,
+.cookie-banner button,
+.cookie-banner input,
+.cookie-banner label {
+  pointer-events: auto;
+  touch-action: manipulation;
 }
 
-.cookie-buttons{
-  display:flex;
-  gap:6px;
-  flex-wrap:wrap;
-  justify-content:center;
+/* Buttons – mobile friendly */
+.cookie-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
 }
 
-.btn{
-  padding:5px 10px;
-  font-size:0.75rem;
-  border-radius:6px;
-  cursor:pointer;
-  font-weight:600;
-  border:none;
+.cookie-buttons button {
+  flex: 1 1 auto;
+  min-height: 44px; /* Apple / Android tap target */
+  font-size: 0.85rem;
 }
 
-.accept-all{
-  background:var(--accent);
-  color:#fff;
+/* Mobile layout adjustments */
+@media (max-width: 600px) {
+  .cookie-container {
+    padding: 12px;
+  }
+
+  .cookie-banner p {
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+
+  .cookie-banner label {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.78rem;
+  }
 }
 
-.reject-all{
-  background:#666;
-  color:#fff;
-}
-
-.customize{
-  background:#fff;
-  border:1px solid #ccc;
-  color:var(--accent);
-}
-
-.save-settings{
-  background:var(--accent);
-  color:#fff;
-}
-
-/* ===============================
-   RESPONSIVE
-   =============================== */
-@media (max-width:840px){
-  html{font-size:16px}
-  .hero h1{font-size:2.2rem}
-}
-
-@media (max-width:480px){
-  html{font-size:15px}
-  .hero h1{font-size:1.9rem}
-}
