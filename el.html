@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DP Forensic Psychology Ltd</title>
+
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="styles2.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Source+Serif+4:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Social meta -->
+  <meta property="og:title" content="DP Forensic Psychology">
+  <meta property="og:description" content="Licensed and registered forensic psychologist in Cyprus. CBT-focused therapy, forensic assessments, expert witness testimony.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dppsy.netlify.app/">
+  <meta property="og:image" content="https://dppsy.netlify.app/assets/social-thumb.svg">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body>
+  <div class="bg-media" aria-hidden="true">
+  <img src="assets/brain-abstract.svg" alt="Stylised brain background" loading="eager">
+</div>
+
+  <!-- PART 1: HEADER + NAV + MENU BUTTON -->
+<!-- HEADER -->
+<header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="assets/logo.jfif" alt="DP Forensic Psychology Logo" class="brand-icon">
+        DP-FORENSIC PSYCHOLOGY LTD
+      </div>
+
+   <nav class="nav">
+  <div class="nav-actions">
+    <button id="menuBtn"
+            class="menu-btn"
+            aria-expanded="false"
+            aria-haspopup="true">
+      Menu ▾
+    </button>
+
+    <button id="langBtn" class="menu-btn" onclick="window.location.href='index.html'">
+  English
+</button>
+
+  </div>
+
+ <ul id="dropdown" class="dropdown" hidden>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="index.html#cv">CV</a></li>
+  <li><a href="index.html#services">Services</a></li>
+  <li><a href="index.html#contact">Contact</a></li>
+  <li><a href="index.html#emergencies">Emergencies</a></li>
+  <li><a href="index.html#important-links">Important Links</a></li>
+</ul>
+
+</nav>
+
+    </div>
+  </header>
+
+
+<!-- JS to toggle menu -->
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const siteNav = document.getElementById('siteNav');
+
+  menuToggle.addEventListener('click', () => {
+    siteNav.classList.toggle('active');
+  });
+</script>
+
+
+<!-- CSS snippet to make it work -->
+
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="container hero">
+    <h2>Καλωσορίσατε στην DP – Forensic Psychology</h2>
+    <p>Προηγμένες υπηρεσίες ψυχολογίας, δικαστικής αξιολόγησης και θεραπείας με επίκεντρο την ανθεκτικότητα και την ευεξία.</p>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="container about">
+    <h2>Σχετικά</h2>
+    <p>Η DP – Forensic Psychology Ltd παρέχει εξατομικευμένες υπηρεσίες ψυχολογίας, δικαστικής αξιολόγησης και θεραπείας σε άτομα, οικογένειες και ομάδες. Η προσέγγισή μας συνδυάζει την κλινική εμπειρία, τις σύγχρονες μεθόδους CBT και την προσεκτική αξιολόγηση για την καλύτερη δυνατή υποστήριξη των πελατών μας.</p>
+  </section>
+
+  <!-- CV SECTION -->
+  <section id="cv" class="container cv">
+    <div class="cv-section">
+      <h3>Δεξιότητες & Ενδιαφέροντα <span>⭐</span></h3>
+      <ul>
+        <li>Διαπραγμάτευση, κριτική σκέψη και δημόσιος λόγος μέσω Debate και Model United Nations (MUN).</li>
+        <li>Δια βίου μάθηση και εκμάθηση ξένων γλωσσών για ενίσχυση πολιτισμικής κατανόησης και ενσυναίσθησης.</li>
+        <li>Υποστηρίκτρια της ευζωίας των ζώων και λάτρης των γατών.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="services" class="container services">
+    <h2>Υπηρεσίες</h2>
+
+  <div class="service-item">
+    <h3>Ατομική Θεραπεία <span>(50–60’)</span></h3>
+    <p>Ατομικές συνεδρίες σε ασφαλές και ιδιωτικό περιβάλλον, με έμφαση στην ανάπτυξη ανθεκτικότητας, επεξεργασία προηγούμενων εμπειριών και πρακτικά εργαλεία για διαρκή ψυχική ευεξία.</p>
+  </div>
+
+  <div class="service-item">
+    <h3>Ομαδική Θεραπεία <span>(90’)</span></h3>
+    <p>Δομημένες ομαδικές συνεδρίες που αντιμετωπίζουν θέματα όπως αποκατάσταση από εθισμούς, διαχείριση θυμού και ανάπτυξη κοινωνικών δεξιοτήτων.</p>
+  </div>
+
+  <div class="service-item">
+    <h3>Οικογενειακή Διαμεσολάβηση <span>(90–120’)</span></h3>
+    <p>Υποστήριξη και διευκόλυνση στην επίλυση διαφορών σε θέματα διαζυγίου, επιμέλειας και οικογενειακών διαφορών γενικότερα.</p>
+  </div>
+
+  <div class="service-item">
+    <h3>Δικαστική Ψυχολογική Αξιολόγηση <span>(περίπου 4–8 εβδομάδες)</span></h3>
+    <p>Ολοκληρωμένες δικαστικές αξιολογήσεις που πραγματοποιούνται σε διάστημα αρκετών εβδομάδων. <strong>Προσφορά κατόπιν αιτήματος / χρέωση ανά ώρα.</strong></p>
+  </div>
+
+  <div class="service-item">
+    <h3>Σύνταξη Δικαστικών Εκθέσεων <span>(2–4 συνεδρίες + ανασκόπηση φακέλου)</span></h3>
+    <p>Προετοιμασία δομημένων δικαστικών εκθέσεων προσαρμοσμένων στην κάθε περίπτωση. <strong>Ανάλογα με την υπόθεση / προσφορά κατόπιν αιτήματος.</strong></p>
+  </div>
+
+  <div class="service-item">
+    <h3>Μαρτυρία Εμπειρογνώμονα</h3>
+    <p>Προφορική κατάθεση και διασταύρωση σε ποινικά, αστικά ή οικογενειακά δικαστήρια.</p>
+    <p><strong>Σταθερή αμοιβή ανά εμφάνιση στο δικαστήριο:</strong><br>Μισή ημέρα (έως 3,5 ώρες) ή πλήρης ημέρα (άνω των 3,5 ωρών ή με σημαντικό ταξίδι).</p>
+    <p><em>Η προετοιμασία για το δικαστήριο περιλαμβάνει ανασκόπηση στοιχείων, ανάλυση φακέλου και προετοιμασία κατάθεσης.</em></p>
+  </div>
+
+  <div class="service-item">
+    <h3>Νομική Συμβουλευτική <span>(60’)</span></h3>
+    <p>Ψυχολογική καθοδήγηση για δικηγόρους και νομικούς επαγγελματίες σχετικά με ψυχολογικά ζητήματα των υποθέσεών τους. <strong>Προσφορά κατόπιν αιτήματος.</strong></p>
+  </div>
+
+  <div class="service-item">
+    <h3>Αξιολόγηση Προσωπικότητας MMPI-2 <span>(1.5–2 ώρες εξέταση + ανάλυση)</span></h3>
+    <p>Το <em>gold standard</em> για την αξιολόγηση της δομής προσωπικότητας και της ψυχοπαθολογίας ενηλίκων σε νομικά και κλινικά πλαίσια.</p>
+  </div>
+
+  <div class="service-item">
+    <h3>Αξιολόγηση Κινδύνου <span>(περίπου 10–15 ώρες)</span></h3>
+    <p>Αξιολόγηση κινδύνου βίας, υποτροπής και ενδοοικογενειακής βίας με εργαλεία Δομημένης Επαγγελματικής Κρίσης (SPJ) (<strong>HCR-20, SAPROF, SAVRY</strong>).</p>
+    <p>Περιλαμβάνει ανασκόπηση φακέλου, κλινική συνέντευξη, βαθμολόγηση και σύνταξη έκθεσης.</p>
+  </div>
+
+  <div class="service-item">
+    <h3>Αξιολόγηση Ικανότητας <span>(4–8 εβδομάδες)</span></h3>
+    <p>Αξιολογήσεις σχετικά με την ικανότητα να σταθεί κάποιος σε δίκη. <strong>Προσφορά κατόπιν ανασκόπησης της Επιστολής Οδηγιών.</strong></p>
+  </div>
+
+  <div class="service-item highlight">
+    <h3>Δωρεάν Αρχική Συνεδρία <span>(15 λεπτά)</span></h3>
+    <p>Συνοδευτική εισαγωγική κλήση για όλους τους νέους πελάτες. Συζητάμε στόχους, αμοιβές, πρόγραμμα και απαντούμε σε ερωτήσεις.</p>
+    <p>Το σημαντικότερο, αυτή η συνεδρία είναι ευκαιρία να αξιολογήσετε τη συνεργασία μας και να νιώσετε άνετα και σίγουρα πριν δεσμευτείτε στη θεραπεία.</p>
+    <p><em>Σημείωση: Η συνεδρία αυτή δεν αποτελεί πλήρη θεραπεία.</em></p>
+  </div>
+</section>
+
+  <!-- EMERGENCIES SECTION -->
+  <section id="emergencies" class="container emergencies">
+    <h2>Επείγοντα</h2>
+    <p>Η DP – Forensic Psychology Ltd δεν παρέχει άμεση κρίσιμη ή επείγουσα παρέμβαση. Όλες οι συνεδρίες γίνονται κατόπιν ραντεβού. Εάν χρειάζεστε άμεση βοήθεια, καλέστε το 112 ή επικοινωνήστε με τον γιατρό σας ή την τοπική ομάδα κρίσης.</p>
+    <!-- Additional content copied from previous message -->
+  </section>
+
+  <!-- IMPORTANT LINKS SECTION -->
+  <section id="important-links" class="container important-links">
+    <h2>Σημαντικοί Σύνδεσμοι</h2>
+    <ul>
+      <li><a href="https://www.bps.org.uk/guideline/code-ethics-and-conduct" target="_blank" rel="noopener noreferrer">Κώδικας Δεοντολογίας και Συμπεριφοράς</a></li>
+      <li><a href="https://seps.gr/epaggelmatika/kodiakas-deontologias/" target="_blank" rel="noopener noreferrer">ΣΥΛΛΟΓΟΣ ΕΛΛΗΝΩΝ ΨΥΧΟΛΟΓΩΝ</a></li>
+      <li><a href="https://web.archive.org/web/20211016154440/http://www.bioethics.gov.cy/Moh/cnbc/cnbc.nsf/All/745717D26F068582C2257CCA003B350F/$file/Patients%20Rights%20Law-English%20translation.pdf" target="_blank" rel="noopener noreferrer">Νόμος για την Προστασία και Διασφάλιση Δικαιωμάτων Ασθενών, 2004</a></li>
+    </ul>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="container contact">
+  <div class="form-helper">
+    <div class="character">🧠</div>
+    <span>Είμαι εδώ για να βοηθήσω! Στείλτε ένα μήνυμα.</span>
+    <div class="hand">👋</div>
+  </div>
+
+  <h2>Επικοινωνία</h2>
+  <p>Email: <a href="mailto:Info@dpforensic-psychology.com">Info@dpforensic-psychology.com</a></p>
+  <p>Τηλέφωνο: +357 99084397</p>
+  <p>WhatsApp: <a href="https://wa.me/+35799084397?text=Hello%20I%20would%20like%20to%20inquire%20about%20your%20services" target="_blank" rel="noopener noreferrer">+357 99084397</a></p>
+
+  <form action="https://formspree.io/f/xbdrdyjp" method="POST" id="contactForm" class="contact-form">
+    <label>*Όνομα:
+      <input type="text" name="first_name" placeholder="Το όνομά σας" required>
+    </label>
+
+    <label>*Επώνυμο:
+      <input type="text" name="last_name" placeholder="Το επώνυμό σας" required>
+    </label>
+
+    <label>*Τηλέφωνο:
+      <input type="tel" name="phone" placeholder="+357 9xxxxxxx" required>
+    </label>
+
+    <label>*Email:
+      <input type="email" name="email" placeholder="you@example.com" required>
+    </label>
+
+    <label>Διαθεσιμότητα (ημέρες/ώρες ή συγκεκριμένες ημερομηνίες):
+      <input type="text" name="availability" placeholder="π.χ., Δευ-Παρ, 18:00-21:00" required>
+    </label>
+
+    <label>Έχετε λάβει υπηρεσίες από ψυχολόγο ή ψυχίατρο στο παρελθόν;*
+      <select name="previous_services" required>
+        <option value="">Επιλέξτε</option>
+        <option value="yes">Ναι</option>
+        <option value="no">Όχι</option>
+      </select>
+    </label>
+
+    <label>Χρησιμοποιείτε φαρμακευτική αγωγή για τρέχουσα ψυχολογική κατάσταση;*
+      <select name="medication" required>
+        <option value="">Επιλέξτε</option>
+        <option value="yes">Ναι</option>
+        <option value="no">Όχι</option>
+      </select>
+    </label>
+
+    <label>Με ενδιαφέρει επί του παρόντος:
+      <select name="service_interest" required>
+        <option value="">Επιλέξτε υπηρεσία</option>
+        <option value="Individual Therapy">Ατομική Θεραπεία</option>
+        <option value="Group Therapy">Ομαδική Θεραπεία</option>
+        <option value="Family Mediation">Οικογενειακή Διαμεσολάβηση</option>
+        <option value="Forensic Psychological Assessment">Δικαστική Ψυχολογική Αξιολόγηση</option>
+        <option value="Forensic Report Writing">Σύνταξη Δικαστικών Εκθέσεων</option>
+        <option value="Expert Witness Testimony">Μαρτυρία Εμπειρογνώμονα</option>
+        <option value="Legal Consultancy">Νομική Συμβουλευτική</option>
+        <option value="MMPI-2 Personality Assessment">Αξιολόγηση Προσωπικότητας MMPI-2</option>
+        <option value="Forensic Risk Assessment">Αξιολόγηση Κινδύνου</option>
+        <option value="Capacity Evaluations">Αξιολόγηση Ικανότητας</option>
+        <option value="Free Initial Consultation">Δωρεάν Αρχική Συνεδρία</option>
+      </select>
+    </label>
+
+    <label>
+      <input type="checkbox" name="data_protection" required>
+      Έχω διαβάσει και κατανοήσει την Πολιτική Προστασίας Δεδομένων *
+    </label>
+
+    <button type="submit">Αποστολή</button>
+  </form>
+</section>
+
+ <!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-container">
+
+    <div style="display:flex; gap:14px; align-items:flex-start;">
+      <!-- Cookie Monster -->
+      <div aria-hidden="true" style="flex-shrink:0">
+        <svg width="46" height="46" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="48" fill="#6ec1e4"/>
+          <circle cx="35" cy="40" r="10" fill="#fff"/>
+          <circle cx="65" cy="40" r="10" fill="#fff"/>
+          <circle cx="35" cy="42" r="5" fill="#000"/>
+          <circle cx="65" cy="42" r="5" fill="#000"/>
+          <ellipse cx="50" cy="65" rx="22" ry="14" fill="#000"/>
+        </svg>
+      </div>
+
+      <div>
+        <p style="margin:0 0 6px 0;">
+          <strong>Γεια σας!</strong> Αυτή η ιστοσελίδα χρησιμοποιεί cookies 🍪 για σωστή λειτουργία και βελτίωση της εμπειρίας σας.
+        </p>
+        <p style="margin:0; font-size:0.78rem;">
+          Μπορείτε να διαχειριστείτε τις προτιμήσεις σας οποιαδήποτε στιγμή.  
+          <a href="cookie-policy.html" target="_blank" rel="noopener noreferrer">Διαβάστε την Πολιτική Cookies</a>
+        </p>
+      </div>
+    </div>
+
+    <div style="margin-top:12px; font-size:0.8rem;">
+      <label>
+        <input type="checkbox" checked disabled>
+        Απαραίτητα cookies (υποχρεωτικά)
+      </label><br>
+
+      <label>
+        <input type="checkbox" id="analyticsCookies">
+        Αναλυτικά cookies
+      </label><br>
+
+      <label>
+        <input type="checkbox" id="marketingCookies">
+        Marketing cookies
+      </label>
+    </div>
+
+    <div class="cookie-buttons" style="margin-top:12px;">
+      <button class="btn accept-all" id="acceptAllCookies">Αποδοχή όλων</button>
+      <button class="btn save-settings" id="saveCookieSettings">Αποθήκευση προτιμήσεων</button>
+      <button class="btn reject-all" id="rejectAllCookies">Απόρριψη μη απαραίτητων</button>
+    </div>
+
+  </div>
+</div>
+  
+  <!-- FOOTER -->
+  <footer class="container footer">
+    <p>&copy; 2025 DP – Forensic Psychology Ltd. Όλα τα δικαιώματα διατηρούνται.</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+  <script>
+    // COOKIE BANNER FUNCTIONALITY
+    const cookieBanner = document.getElementById('cookieBanner');
+    const acceptAll = document.getElementById('acceptAllCookies');
+    const saveSettings = document.getElementById('saveCookieSettings');
+    const rejectAll = document.getElementById('rejectAllCookies');
+    const analyticsCheckbox = document.getElementById('analyticsCookies');
+    const marketingCheckbox = document.getElementById('marketingCookies');
+
+    function setCookie(name, value, days) {
+      const d = new Date();
+      d.setTime(d.getTime() + (days*24*60*60*1000));
+      document.cookie = name + "=" + value + ";path=/;expires=" + d.toUTCString();
+    }
+
+    function getCookie(name) {
+      const cname = name + "=";
+      const decodedCookie = decodeURIComponent(document.cookie);
+      const ca = decodedCookie.split(';');
+      for(let i=0;i<ca.length;i++) {
+        let c = ca[i].trim();
+        if (c.indexOf(cname) == 0) return c.substring(cname.length, c.length);
+      }
+      return "";
+    }
+
+    function showBanner() {
+      if (!getCookie('cookieConsent')) cookieBanner.style.display = 'block';
+    }
+
+    function acceptCookies() {
+      setCookie('cookieConsent', 'all', 365);
+      analyticsCheckbox.checked = true;
+      marketingCheckbox.checked = true;
+      cookieBanner.style.display = 'none';
+    }
+
+    function rejectCookies() {
+      setCookie('cookieConsent', 'necessary', 365);
+      analyticsCheckbox.checked = false;
+      marketingCheckbox.checked = false;
+      cookieBanner.style.display = 'none';
+    }
+
+    function saveCookiePreferences() {
+      let pref = 'necessary';
+      if (analyticsCheckbox.checked || marketingCheckbox.checked) pref = 'custom';
+      setCookie('cookieConsent', pref, 365);
+      cookieBanner.style.display = 'none';
+    }
+
+    acceptAll.addEventListener('click', acceptCookies);
+    rejectAll.addEventListener('click', rejectCookies);
+    saveSettings.addEventListener('click', saveCookiePreferences);
+
+    document.addEventListener('DOMContentLoaded', showBanner);
+  </script>
+</body>
+</html>

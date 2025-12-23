@@ -33,7 +33,7 @@ body{
    CONTAINERS
    =============================== */
 .container{
-  max-width:900px;
+  max-width:990px;
   width:calc(100% - 40px);
   margin:28px auto;
   padding:28px;
