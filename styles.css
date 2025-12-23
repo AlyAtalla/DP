@@ -446,3 +446,31 @@ li{margin-bottom:0.55rem}
   filter:brightness(1.05) contrast(1.03);
 }
 
+/* ===============================
+   MOBILE NAV FIX
+   =============================== */
+@media (max-width: 768px) {
+
+  .nav {
+    position: relative;
+  }
+
+  .nav-actions {
+    display: flex;
+    flex-direction: column !important;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  .menu-btn,
+  .lang-btn {
+    width: auto;
+  }
+
+  /* Make sure dropdown stays under buttons */
+  .dropdown {
+    right: 0;
+    left: auto;
+    top: calc(100% + 6px);
+  }
+}
