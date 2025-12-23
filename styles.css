@@ -305,3 +305,122 @@ li{margin-bottom:0.55rem}
     font-size:11px;
   }
 }
+
+/* ===============================
+   CV PROFILE – COMPACT + VISIBLE EFFECT
+   =============================== */
+
+.cv-profile{
+  display:flex;
+  justify-content:center;
+  margin:18px 0 26px;
+}
+
+.profile-frame{
+  position:relative;
+  width:110px;   /* smaller size */
+  height:110px;
+  border-radius:50%;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:
+    0 12px 26px rgba(8,20,28,0.28),
+    inset 0 0 0 2px rgba(11,86,119,0.35);
+}
+
+/* image */
+.profile-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+}
+
+/* animated glow ring */
+.profile-frame::before{
+  content:"";
+  position:absolute;
+  inset:-6px;
+  border-radius:50%;
+  background:
+    conic-gradient(
+      from 0deg,
+      transparent 0%,
+      rgba(180,198,220,0.9) 30%,
+      transparent 60%
+    );
+  animation:sweep 3.8s linear infinite;
+  opacity:0.9;
+}
+
+/* subtle pulse */
+.profile-frame::after{
+  content:"";
+  position:absolute;
+  inset:-10px;
+  border-radius:50%;
+  background:rgba(180,198,220,0.35);
+  animation:pulse 2.6s ease-in-out infinite;
+  z-index:-1;
+}
+
+@keyframes sweep{
+  to{transform:rotate(360deg)}
+}
+
+@keyframes pulse{
+  0%,100%{transform:scale(1); opacity:0.4}
+  50%{transform:scale(1.08); opacity:0.8}
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce){
+  .profile-frame::before,
+  .profile-frame::after{
+    animation:none;
+  }
+}
+/* ===============================
+   CV PROFILE – MINI HOVER EFFECT
+   =============================== */
+
+.cv-profile{
+  display:flex;
+  justify-content:center;
+  margin:14px 0 22px;
+}
+
+.profile-mini{
+  width:120px;      /* slightly bigger */
+  height:120px;
+  border-radius:50%;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:
+    0 3px 8px rgba(8,20,28,0.18),
+    inset 0 0 0 1px rgba(11,86,119,0.3);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.profile-mini img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+  transition:filter 0.35s ease;
+}
+
+/* subtle hover interaction */
+.profile-mini:hover{
+  box-shadow:
+    0 8px 18px rgba(8,20,28,0.28),
+    inset 0 0 0 2px rgba(11,86,119,0.65);
+  transform:translateY(-1px);
+}
+
+.profile-mini:hover img{
+  filter:brightness(1.05) contrast(1.03);
+}
