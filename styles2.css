@@ -2,7 +2,7 @@
   --bg:#B4C6DC; /* updated background color */
   --accent:#0b5677;
   --muted:#666;
-  --container:1000px;
+  --container:1100px;
 }
 
 
@@ -33,14 +33,15 @@ body{
    CONTAINERS
    =============================== */
 .container{
-  max-width:990px;
-  width:calc(100% - 40px);
+  max-width:900px;
+  width:calc(100% - 10px);
   margin:28px auto;
   padding:28px;
   background:rgba(255,255,255,0.96);
   border-radius:14px;
   box-shadow:0 10px 34px rgba(8,20,28,0.08);
 }
+
 
 /* ===============================
    BACKGROUND MEDIA
@@ -167,7 +168,14 @@ body{
    HERO
    =============================== */
 .hero{
-  padding:72px 0 36px;
+  max-width:900px;
+  width:calc(100% - 10px);
+  margin:28px auto;
+  padding:28px;
+  background:rgba(255,255,255,0.96);
+  border-radius:14px;
+  box-shadow:0 10px 34px rgba(8,20,28,0.08);
+
 }
 
 .hero h1{
