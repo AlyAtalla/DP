@@ -21,6 +21,7 @@
 </head>
 
 <body>
+  <canvas id="snow"></canvas>
   <div class="bg-media" aria-hidden="true">
   <img src="assets/brain-abstract.svg" alt="Stylised brain background" loading="eager">
 </div>
@@ -458,5 +459,69 @@
 
     document.addEventListener('DOMContentLoaded', showBanner);
   </script>
+  <script>
+  const canvas = document.getElementById('snow');
+  const ctx = canvas.getContext('2d');
+
+  let w, h;
+  const flakes = [];
+
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+
+  function createFlakes(count = 120) {
+    flakes.length = 0;
+    for (let i = 0; i < count; i++) {
+      flakes.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: Math.random() * 3 + 1,
+        d: Math.random() * 1 + 0.5,
+        s: Math.random() * 1 + 0.2
+      });
+    }
+  }
+
+  createFlakes();
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    ctx.fillStyle = 'rgba(255,255,255,0.9)';
+    ctx.beginPath();
+
+    for (const f of flakes) {
+      ctx.moveTo(f.x, f.y);
+      ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+    }
+
+    ctx.fill();
+    move();
+  }
+
+  function move() {
+    for (const f of flakes) {
+      f.y += f.s;
+      f.x += Math.sin(f.y * f.d) * 0.3;
+
+      if (f.y > h) {
+        f.y = -5;
+        f.x = Math.random() * w;
+      }
+    }
+  }
+
+  function animate() {
+    draw();
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
+
 </body>
 </html>
