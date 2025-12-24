@@ -459,69 +459,87 @@
 
     document.addEventListener('DOMContentLoaded', showBanner);
   </script>
+
+
   <script>
-  const canvas = document.getElementById('snow');
-  const ctx = canvas.getContext('2d');
+  (function () {
+    const now = new Date();
+    const month = now.getMonth(); // 0 = Jan
+    const day = now.getDate();
 
-  let w, h;
-  const flakes = [];
+    const isChristmasSeason =
+      (month === 11 && day >= 1) || // December
+      (month === 0 && day <= 6);    // January 1–6
 
-  function resize() {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-  }
+    if (!isChristmasSeason) return;
 
-  window.addEventListener('resize', resize);
-  resize();
+    // Respect reduced motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  function createFlakes(count = 120) {
-    flakes.length = 0;
-    for (let i = 0; i < count; i++) {
-      flakes.push({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        r: Math.random() * 3 + 1,
-        d: Math.random() * 1 + 0.5,
-        s: Math.random() * 1 + 0.2
-      });
-    }
-  }
+    const canvas = document.getElementById('snow');
+    const ctx = canvas.getContext('2d');
 
-  createFlakes();
+    let w, h;
+    const flakes = [];
 
-  function draw() {
-    ctx.clearRect(0, 0, w, h);
-    ctx.fillStyle = 'rgba(255,255,255,0.9)';
-    ctx.beginPath();
-
-    for (const f of flakes) {
-      ctx.moveTo(f.x, f.y);
-      ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
     }
 
-    ctx.fill();
-    move();
-  }
+    window.addEventListener('resize', resize);
+    resize();
 
-  function move() {
-    for (const f of flakes) {
-      f.y += f.s;
-      f.x += Math.sin(f.y * f.d) * 0.3;
-
-      if (f.y > h) {
-        f.y = -5;
-        f.x = Math.random() * w;
+    function createFlakes(count = 120) {
+      flakes.length = 0;
+      for (let i = 0; i < count; i++) {
+        flakes.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          r: Math.random() * 3 + 1,
+          d: Math.random() * 1 + 0.5,
+          s: Math.random() * 1 + 0.2
+        });
       }
     }
-  }
 
-  function animate() {
-    draw();
-    requestAnimationFrame(animate);
-  }
+    createFlakes();
 
-  animate();
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = 'rgba(255,255,255,0.9)';
+      ctx.beginPath();
+
+      for (const f of flakes) {
+        ctx.moveTo(f.x, f.y);
+        ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+      }
+
+      ctx.fill();
+      move();
+    }
+
+    function move() {
+      for (const f of flakes) {
+        f.y += f.s;
+        f.x += Math.sin(f.y * f.d) * 0.3;
+
+        if (f.y > h) {
+          f.y = -5;
+          f.x = Math.random() * w;
+        }
+      }
+    }
+
+    function animate() {
+      draw();
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  })();
 </script>
+
 
 </body>
 </html>
